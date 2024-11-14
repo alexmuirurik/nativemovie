@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/alexmuirurik/nativemovie/refs/heads/main/assets/images/screenshot1.jpeg">
+    </a>
+</p>
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
