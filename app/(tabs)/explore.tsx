@@ -1,13 +1,13 @@
 import { StyleSheet, Image, Platform } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { Collapsible } from '@/components/ui/Collapsible';
+import { ExternalLink } from '@/components/ui/ExternalLink';
+import ParallaxScrollView from '@/components/layouts/ParallaxScrollView';
+import { ThemedText } from '@/components/ui/ThemedText';
+import { ThemedView } from '@/components/ui/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 
-export default function TabTwoScreen() {
+const ExploreScreen = () => {
 	return (
 		<ParallaxScrollView>
 			<ThemedView style={styles.titleContainer}>
@@ -98,3 +98,6 @@ const styles = StyleSheet.create({
 		gap: 8,
 	},
 });
+
+
+export default ExploreScreen

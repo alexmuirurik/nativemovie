@@ -1,14 +1,14 @@
-import { Tabs } from 'expo-router';
+import { Stack, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
+import { HapticTab } from '@/components/ui/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+const TabLayout = () => {
 	const colorScheme = useColorScheme();
 	return (
 		<Tabs
@@ -39,6 +39,9 @@ export default function TabLayout() {
 					tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
 				}}
 			/>
+			<Stack.Screen name='movie' options={{headerShown: false}} />
 		</Tabs>
 	);
 }
+
+export default TabLayout

@@ -1,10 +1,27 @@
+import { Link } from 'expo-router';
 import React from 'react';
-import { Animated, Dimensions, Image, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, Image, StyleSheet, TouchableHighlight, View } from 'react-native';
 import { Extrapolation, interpolate, SharedValue, useAnimatedStyle } from 'react-native-reanimated';
 
 const imageurl = 'https://image.tmdb.org/t/p/original'
 const { width } = Dimensions.get('window')
-const SliderItemCard = ({index, movie, sharedx }: { index:number, movie: any, sharedx: SharedValue<number> }) => {
+const handleImageClick = (movieId: string) => {
+
+}
+const SliderItemCard = ({ index, movie, sharedx, height, width }: { index: number, movie: any, sharedx: SharedValue<number>, height: number, width: number }) => {
+    const styles = StyleSheet.create({
+        slidercard: {
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 20,
+            marginEnd: 10
+        },
+        image: {
+            width: width,
+            height: height,
+            borderRadius: 20
+        }
+    })
     const anumatedStyle = useAnimatedStyle(() => {
         return {
             transform: [
@@ -29,27 +46,15 @@ const SliderItemCard = ({index, movie, sharedx }: { index:number, movie: any, sh
         }
     })
     return (
-        <Animated.View key={movie?.index} style={[styles.slidercard, anumatedStyle]} >
-            <Image
-                style={styles.image}
-                source={{ uri: imageurl + (movie?.item?.poster_path ?? movie?.item?.backdrop_path) }}
-            />
+        <Animated.View key={movie?.index} style={[styles.slidercard, anumatedStyle]}>
+            <Link href={{pathname: '/(tabs)movie[id]', params: {id: movie?.id}}}>
+                <Image
+                    style={styles.image}
+                    source={{ uri: imageurl + (movie?.item?.poster_path ?? movie?.item?.backdrop_path) }}
+                />
+            </Link>
         </Animated.View>
     );
 }
 
 export default SliderItemCard;
-
-const styles = StyleSheet.create({
-    slidercard: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 20,
-        marginEnd: 10
-    },
-    image: {
-        width: 200,
-        height: 400,
-        borderRadius: 20
-    }
-})

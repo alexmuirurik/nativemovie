@@ -2,27 +2,23 @@ export const commonheader = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYmYwZDVhMGFkZGRlMG
 
 export const categories = [
     {
-        active: true,
-        title: 'All',
+        active: 'movie',
+        link: 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+        title: 'Upcoming Movies',
     },
     {
-        active: false,
-        title: 'Movies',
+        active: 'movie',
+        link: 'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
+        title: 'Trending Movies',
     },
     {
-        active: false,
-        title: 'Series',
+        active: 'series',
+        link: 'https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1',
+        title: 'Airing Today',   
     },
     {
-        active: false,
-        title: 'Christian',
-    },
-    {
-        active: false,
-        title: 'Horror',
-    },
-    {
-        active: false,
-        title: 'Thriller',
+        active: 'tv',
+        link: 'https://api.themoviedb.org/3/trending/tv/day?language=en-US',
+        title: 'TV Series',
     },
 ]

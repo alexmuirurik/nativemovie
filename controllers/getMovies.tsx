@@ -9,7 +9,7 @@ export const Fetchmoviedir = async (url: string) => {
     };
     const res = await fetch(url, options) 
     const moviedata = await res.json()
-    return moviedata.results
+    return moviedata
 }
 
 export const getMovies = () => {
